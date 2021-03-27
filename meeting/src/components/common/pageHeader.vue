@@ -8,20 +8,10 @@
         background-color="#545c64"
         text-color="#fff"
         active-text-color="#ffd04b">
-        <el-menu-item index="1">CVPR</el-menu-item>
-        <el-submenu index="2">
-            <template slot="title">ICCV</template>
-            <el-menu-item index="2-1">选项1</el-menu-item>
-            <el-menu-item index="2-2">选项2</el-menu-item>
-            <el-menu-item index="2-3">选项3</el-menu-item>
-            <el-submenu index="2-4">
-            <template slot="title">选项4</template>
-            <el-menu-item index="2-4-1">选项1</el-menu-item>
-            <el-menu-item index="2-4-2">选项2</el-menu-item>
-            <el-menu-item index="2-4-3">选项3</el-menu-item>
-            </el-submenu>
-        </el-submenu>
-        <el-menu-item index="3" disabled>ECCV</el-menu-item>
+        <el-menu-item index="1" @click="jumpHOME()">HOME</el-menu-item>
+        <el-menu-item index="2" @click="jumpCVPR()">CVPR</el-menu-item>
+        <el-menu-item index="3" @click="jumpICCV()">ICCV</el-menu-item>
+        <el-menu-item index="4" @click="jumpECCV()">ECCV</el-menu-item>
         
         <el-badge is-dot class="item right">
           <el-button class="share-button" icon="el-icon-bell" type="primary"></el-button>
@@ -61,6 +51,18 @@
     methods: {
       handleSelect(key, keyPath) {
         console.log(key, keyPath);
+      },
+      jumpHOME:function(){
+        this.$router.push('/');
+      },
+      jumpCVPR:function(){
+        this.$router.push('/subForumCVPR');
+      },
+      jumpICCV:function(){
+        this.$router.push('/subForumICCV');
+      },
+      jumpECCV:function(){
+        this.$router.push('/subForumECCV');
       }
     }
   }
