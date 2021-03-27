@@ -16,6 +16,7 @@ import Register from '../views/register/Register'
 
 //views
 import index from '@/views/client/index'
+import tz from '@/views/client/tz'
 import subForumECCV from '@/views/client/subForumECCV'
 import subForumICCV from '@/views/client/subForumICCV'
 import subForumCVPR from '@/views/client/subForumCVPR'
@@ -87,7 +88,12 @@ export default new Router({
             name: 'subForumICCV',
             component: subForumICCV
         },
-
+        //通知
+        {
+            path: '/tz',
+            name: 'tz',
+            component: tz
+        },
         {
             path: '/test',
             name: 'test',

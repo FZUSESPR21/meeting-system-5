@@ -14,7 +14,7 @@
         <el-menu-item index="4" @click="jumpECCV()">ECCV</el-menu-item>
         
         <el-badge is-dot class="item right">
-          <el-button class="share-button" icon="el-icon-bell" type="primary"></el-button>
+          <el-button class="share-button" icon="el-icon-bell" type="primary" @click="jumpTZ()"></el-button>
         </el-badge>
 
         <el-button class="back right" type="primary" icon="el-icon-right" @click="jumpLOGIN()">退出</el-button>
@@ -51,6 +51,9 @@
     methods: {
       handleSelect(key, keyPath) {
         console.log(key, keyPath);
+      },
+      jumpTZ:function(){
+        this.$router.push('/tz');
       },
       jumpHOME:function(){
         this.$router.push('/');
