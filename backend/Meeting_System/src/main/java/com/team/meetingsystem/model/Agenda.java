@@ -2,10 +2,8 @@ package com.team.meetingsystem.model;
 
 import java.util.Date;
 
-/**
- * @date 2021/03/27
- */
 public class Agenda {
+
     private Date startTime;
     private Date endTime;
     private String content;
@@ -38,14 +36,5 @@ public class Agenda {
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-    @Override
-    public String toString() {
-        return "Agenda{" +
-            "startTime=" + startTime +
-            ", endTime=" + endTime +
-            ", content='" + content + '\'' +
-            '}';
     }
 }
