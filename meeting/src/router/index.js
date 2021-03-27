@@ -64,11 +64,6 @@ export default new Router({
             redirect: '/'
         },
         {
-            path: '/HelloWorld',
-            name: 'HelloWorld',
-            component: HelloWorld
-        },
-        {
             path: '/test',
             name: 'test',
             component: test
