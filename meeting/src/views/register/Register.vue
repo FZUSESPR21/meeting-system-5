@@ -84,7 +84,7 @@
     submitForm(formName) {
 
       this.$message.success("注册成功!!!");
-      this.$router.push({path: "/"});
+      this.$router.push({path: "/login"});
     },
     loginForm() {
       this.$router.push({path: "/login"});
