@@ -23,7 +23,7 @@ public class AccountInfoController {
     public ResponseMessage all(HttpServletRequest request){
         HttpSession session= request.getSession();
         Object object = session.getAttribute("userName");
-        /*if(null==object){
+        if(null==object){
             return new ResponseMessage(201, "授权已过期",object);//用户授权已经过期，设置为201
         }
         else{
@@ -31,7 +31,6 @@ public class AccountInfoController {
                 return ResponseMessage.success(accountInfoService.selectAll());
             }
             return new ResponseMessage(202, "用户没有权限",object);
-        }*/return ResponseMessage.success(accountInfoService.selectAll());
+        }
     }
-
 }
