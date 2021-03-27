@@ -17,8 +17,7 @@
 <!--        <el-input v-model.number="ruleForm.age"></el-input>-->
 <!--      </el-form-item>-->
       <el-form-item>
-        <el-button type="primary" @click="submitForm('ruleForm')" style="margin-left:40px">注册</el-button>
-        <el-button @click="loginForm()">去登录</el-button>
+        <el-button type="primary" @click="submitForm('ruleForm')" style="margin-left:30%">注册</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -84,9 +83,6 @@
     submitForm(formName) {
 
       this.$message.success("注册成功!!!");
-      this.$router.push({path: "/login"});
-    },
-    loginForm() {
       this.$router.push({path: "/login"});
     }
   }
