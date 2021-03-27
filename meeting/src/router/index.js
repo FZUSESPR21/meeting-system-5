@@ -12,6 +12,9 @@ import card from '@/components/common/card'
 
 //views
 import index from '@/views/client/index'
+import subForumECCV from '@/views/client/subForumECCV'
+import subForumICCV from '@/views/client/subForumICCV'
+import subForumCVPR from '@/views/client/subForumCVPR'
 
 Vue.use(Router)
 
@@ -63,11 +66,24 @@ export default new Router({
             path: '*',
             redirect: '/'
         },
+
+        //分论坛页面
         {
-            path: '/HelloWorld',
-            name: 'HelloWorld',
-            component: HelloWorld
+            path: '/subForumECCV',
+            name: 'subForumECCV',
+            component: subForumECCV
         },
+        {
+            path: '/subForumCVPR',
+            name: 'subForumCVPR',
+            component: subForumCVPR
+        },
+        {
+            path: '/subForumICCV',
+            name: 'subForumICCV',
+            component: subForumICCV
+        },
+
         {
             path: '/test',
             name: 'test',
