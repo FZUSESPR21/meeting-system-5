@@ -1,9 +1,7 @@
 package com.team.meetingsystem.service.impl;
 
-import com.team.meetingsystem.dao.AccountMapper;
 import com.team.meetingsystem.model.Account;
 import com.team.meetingsystem.service.AccountService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,8 +12,6 @@ import java.util.List;
  */
 @Service
 public class AccountServiceImpl implements AccountService {
-    @Autowired
-    private AccountMapper accountMapper;
 
     @Override
     public boolean login(Account account) {
@@ -24,6 +20,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public List<Account> getAccounts() {
-        return accountMapper.selectAll();
+//        return accountMapper.selectAll();
+        return null;
     }
 }

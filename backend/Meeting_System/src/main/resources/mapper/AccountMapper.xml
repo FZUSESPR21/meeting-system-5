@@ -3,13 +3,29 @@
 <mapper namespace="com.team.meetingsystem.dao.AccountMapper">
     <resultMap id="BaseResultMap" type="com.team.meetingsystem.model.Account">
         <constructor>
-            <idArg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
-            <arg column="password" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <idArg column="name" javaType="java.lang.String" jdbcType="CHAR" />
+            <arg column="password" javaType="java.lang.String" jdbcType="CHAR" />
+            <arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER"/>
         </constructor>
     </resultMap>
 
+    <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select *
+        from account
+        where account.name = #{name,jdbcType=CHAR}
+    </select>
+
     <select id="selectAll" resultMap="BaseResultMap">
         select * from account
+    </select>
+
+    <insert id="insert" parameterType="com.team.meetingsystem.model.Account">
+        insert into account (account.name, account.password, account.status)
+        values (#{name,jdbcType=CHAR}, #{password,jdbcType=CHAR}, #{status,jdbcType=INTEGER})
+  </insert>
+
+    <select id="accountCount" resultType="java.lang.Integer">
+        select count(*) from account where status = 1
     </select>
 
 
