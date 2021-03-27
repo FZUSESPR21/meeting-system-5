@@ -4,6 +4,12 @@
       <h2>注册</h2>
     </div>
     <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+      <el-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange" class="checkbox">全选</el-checkbox>
+        <div style="margin: 15px 0;"></div>
+      <el-checkbox-group v-model="checkedCities" @change="handleCheckedCitiesChange" class="checkbox">
+        <el-checkbox v-for="city in cities" :label="city" :key="city" class="checkbox">{{city}}</el-checkbox>
+      </el-checkbox-group>
+
       <el-form-item label="账号" class="label" prop="user" :header-cell-style="{'text-align':'center'}">
         <el-input type="text" v-model="ruleForm.user" autocomplete="off"></el-input>
       </el-form-item>
@@ -24,6 +30,7 @@
 </template>
 
 <script>
+  const cityOptions = ['A论坛', 'B论坛', 'C论坛', 'D论坛','E'];
   // import axios from 'axios'
   export default {
     name: "register",
@@ -57,6 +64,10 @@
       }
     };
     return {
+      checkAll: false,
+        checkedCities: ['A论坛', 'B论坛'],
+        cities: cityOptions,
+        isIndeterminate: true,
       ruleForm: {
         user: '',
         pass: '',
@@ -84,7 +95,16 @@
 
       this.$message.success("注册成功!!!");
       this.$router.push({path: "/login"});
-    }
+    },
+    handleCheckAllChange(val) {
+        this.checkedCities = val ? cityOptions : [];
+        this.isIndeterminate = false;
+      },
+      handleCheckedCitiesChange(value) {
+        let checkedCount = value.length;
+        this.checkAll = checkedCount === this.cities.length;
+        this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length;
+      }
   }
   }
 </script>
@@ -95,11 +115,11 @@
   }
   #register-container{
     width: 400px;
-    height: 320px;
+    height: 400px;
     background: #e2e2e2;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 40%;
     margin-left: -220px;
     margin-top: -170px;
     border-radius: 5px;
@@ -107,8 +127,8 @@
     padding-right: 40px;
     box-shadow:rgba(36, 36, 36, 0.61) 5px 5px 10px ;
   }
-.label .el-form-item__label {
-  text-align: center;
-  padding-right: 0;
-}
+  .label .el-form-item__label {
+    text-align: center;
+    padding-right: 0;
+  }
 </style>
