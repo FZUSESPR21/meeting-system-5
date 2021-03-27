@@ -17,7 +17,7 @@
           <el-button class="share-button" icon="el-icon-bell" type="primary"></el-button>
         </el-badge>
 
-        <el-button class="back right" type="primary" icon="el-icon-right">退出</el-button>
+        <el-button class="back right" type="primary" icon="el-icon-right" @click="jumpLOGIN()">退出</el-button>
 
         </el-menu>
     </div>
@@ -54,6 +54,9 @@
       },
       jumpHOME:function(){
         this.$router.push('/');
+      },
+      jumpLOGIN:function(){
+        this.$router.push('/login');
       },
       jumpCVPR:function(){
         this.$router.push('/subForumCVPR');
