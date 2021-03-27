@@ -6,10 +6,10 @@ import router from './router'
 
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import VueParticles from 'vue-particles'
+//import VueParticles from 'vue-particles'
 
 Vue.use(ElementUI);
-Vue.use(VueParticles)
+//Vue.use(VueParticles)
 
 // new Vue({
 //   el: '#app',
@@ -20,8 +20,8 @@ Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
+    el: '#app',
+    router,
+    components: { App },
+    template: '<App/>'
 })
