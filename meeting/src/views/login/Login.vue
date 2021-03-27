@@ -1,13 +1,14 @@
 <template>
   <div id="login-container">
     <div style="text-align: center;height: 50px" id="login">
-      登录
+     <h2> 登录
+     </h2>
     </div>
     <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-      <el-form-item label="账号" prop="user">
+      <el-form-item label="账号" prop="user" class="item">
         <el-input type="text" v-model="ruleForm.user" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="密码" prop="pass">
+      <el-form-item label="密码" prop="pass" class="item">
         <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
       </el-form-item>
       <el-form-item id="anniu" style="padding-left:40px">
@@ -66,7 +67,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   body{
     margin: 0;
   }
@@ -87,4 +88,8 @@ export default {
   #login{
     padding-left: 40px;
   }
+  .item .el-form-item__label{
+    text-align: center;
+    padding-right: 0px;
+}
 </style>
