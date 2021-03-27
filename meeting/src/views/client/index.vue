@@ -3,10 +3,10 @@
         <div class="header"><v-pageheader></v-pageheader></div>
         <div class="index-box">
             <div class="tmline"><v-timeline2></v-timeline2></div>
-            <div>
-                <v-card></v-card>
-                <v-card></v-card>
-                <v-card></v-card>
+            <div class="index-card">
+                <v-cvprcard class="card"></v-cvprcard>
+                <v-iccvcard class="card"></v-iccvcard>
+                <v-eccvcard class="card"></v-eccvcard>
             </div>
         </div>
         
@@ -27,6 +27,12 @@
         padding-left: 0;
         display: inline-block;
     }
+    .index-card{
+        margin-left: 50px;
+    }
+    .card{
+        margin-bottom: 20px;
+    }
 </style>
 
 <script>
@@ -35,14 +41,18 @@
     //时间线
     import timeline from '@/components/client/index/timeline';
     import timeline2 from '@/components/client/index/timeline2';
-    import card from '@/components/common/card'
+    import cvprcard from '@/components/client/subForum/CVPRcd';
+    import iccvcard from '@/components/client/subForum/ICCVcd';
+    import eccvcard from '@/components/client/subForum/ECCVcd';
 
     export default {
     components:{
         'v-pageheader':pageheader,
         'v-timeline':timeline,
         'v-timeline2':timeline2,
-        'v-card':card
+        'v-cvprcard':cvprcard,
+        'v-iccvcard':iccvcard,
+        'v-eccvcard':eccvcard
     },
     data(){
         return{}
