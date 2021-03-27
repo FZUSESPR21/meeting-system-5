@@ -1,6 +1,7 @@
 package com.team.meetingsystem.service.impl;
 import com.team.meetingsystem.dao.AgendaMapper;
 import com.team.meetingsystem.model.Agenda;
+import com.team.meetingsystem.service.AgendaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

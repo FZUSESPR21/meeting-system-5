@@ -3,6 +3,8 @@ package com.team.meetingsystem.dao;
 import com.team.meetingsystem.model.Account;
 import org.apache.ibatis.annotations.Mapper;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -16,7 +18,8 @@ public interface AccountMapper {
 
     void insert(Account account);
 
-    Integer accountCount();
+    Integer MeetingAccountCount();
+    Integer ForumAccountCount(Integer status);
 
     List<Account> selectAll();
 

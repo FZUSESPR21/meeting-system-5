@@ -1,4 +1,4 @@
-package com.team.meetingsystem.service.impl;
+package com.team.meetingsystem.service;
 
 import com.team.meetingsystem.model.Agenda;
 

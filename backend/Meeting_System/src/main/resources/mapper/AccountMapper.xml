@@ -24,9 +24,12 @@
         values (#{name,jdbcType=CHAR}, #{password,jdbcType=CHAR}, #{status,jdbcType=INTEGER})
   </insert>
 
-    <select id="accountCount" resultType="java.lang.Integer">
+    <select id="MeetingAccountCount" resultType="java.lang.Integer">
         select count(*) from account where status = 1
     </select>
 
+    <select id="ForumAccountCount" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+        select count(*) from account_forum where forumId = #{status}
+    </select>
 
 </mapper>
