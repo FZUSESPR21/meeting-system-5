@@ -5,7 +5,7 @@
  */
 module.exports = {
     devServer: {
-        open: false,
+        open: true,
         // 跨域
         proxy: {
             '/nuojinadm/': {
