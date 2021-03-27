@@ -1,5 +1,7 @@
 package com.team.meetingsystem.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 /**
@@ -9,6 +11,8 @@ public class Forum {
     private Integer id;
     private String title;
     private String accountName;
+
+    @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     private Date startTime;
 
     public Forum(Integer id, String title, String accountName, Date startTime) {
