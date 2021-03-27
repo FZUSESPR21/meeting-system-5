@@ -22,11 +22,28 @@
             </el-submenu>
         </el-submenu>
         <el-menu-item index="3" disabled>ECCV</el-menu-item>
+        
+        <el-badge is-dot class="item right">
+          <el-button class="share-button" icon="el-icon-bell" type="primary"></el-button>
+        </el-badge>
+
+        <el-button class="back right" type="primary" icon="el-icon-right">退出</el-button>
+
         </el-menu>
     </div>
 </template>
 
 <style scoped>
+.item {
+  margin: 10px;
+  margin-right: 40px;
+}
+.back{
+  margin: 10px;
+}
+.right{
+  float:right;
+}
 .wrap{
     margin: 0;
     padding: 0;
@@ -38,7 +55,7 @@
     data() {
       return {
         activeIndex: '1',
-        activeIndex2: '1'
+        activeIndex2: '1',
       };
     },
     methods: {
