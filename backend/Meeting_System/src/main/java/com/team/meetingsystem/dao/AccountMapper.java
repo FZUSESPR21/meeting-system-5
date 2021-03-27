@@ -12,8 +12,12 @@ import java.util.List;
 @Mapper
 public interface AccountMapper {
 
-    List<Account> selectAll();
-
     Account selectByName(String name);
+
+    void insert(Account account);
+
+    Integer accountCount();
+
+    List<Account> selectAll();
 
 }

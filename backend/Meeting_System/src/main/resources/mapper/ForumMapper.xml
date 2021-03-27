@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team.meetingsystem.dao.ForumMapper">
+    <resultMap id="BaseResultMap" type="com.team.meetingsystem.model.Forum">
+        <constructor>
+            <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+            <arg column="title" javaType="java.lang.String" jdbcType="CHAR" />
+            <arg column="accountName" javaType="java.lang.String" jdbcType="CHAR" />
+            <arg column="startTime" javaType="java.util.Date" jdbcType="TIMESTAMP"/>
+        </constructor>
+    </resultMap>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        select * from forum
+    </select>
+
+</mapper>
