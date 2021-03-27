@@ -10,8 +10,8 @@
         text-color="#fff"
         active-text-color="#ffd04b">
             <el-menu-item index="/user_num">查看人数</el-menu-item>
-            <el-menu-item index="2">查看用户信息</el-menu-item>
-            <el-menu-item index="3">发布通知</el-menu-item>
+            <el-menu-item index="/user_info">查看用户信息</el-menu-item>
+            <el-menu-item index="/send_message">发布通知</el-menu-item>
             <el-menu-item index="/login" class="right">退出</el-menu-item>
         </el-menu>
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <div id="login-container">
+  <div id="register-container">
     <div style="text-align: center;height: 50px;padding-left:40px">
       登录
     </div>
@@ -18,7 +18,7 @@
 <!--      </el-form-item>-->
       <el-form-item>
         <el-button type="primary" @click="submitForm('ruleForm')" style="margin-left:40px">注册</el-button>
-        <el-button @click="loginForm('ruleForm')">去登录</el-button>
+        <el-button @click="loginForm()">去登录</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -27,7 +27,7 @@
 <script>
   // import axios from 'axios'
   export default {
-    name: "login",
+    name: "register",
   data() {
     var validatePass = (rule, value, callback) => {
       if (value === '') {
@@ -86,8 +86,8 @@
       this.$message.success("注册成功!!!");
       this.$router.push({path: "/"});
     },
-    loginForm(formName) {
-      this.$refs[formName].resetFields();
+    loginForm() {
+      this.$router.push({path: "/login"});
     }
   }
   }
@@ -97,7 +97,7 @@
   body{
     margin: 0;
   }
-  #login-container{
+  #register-container{
     width: 400px;
     height: 320px;
     background: #e5e9f2;
@@ -109,5 +109,6 @@
     border-radius: 5px;
     padding-top: 40px;
     padding-right: 40px;
+    box-shadow:rgba(36, 36, 36, 0.61) 5px 5px 10px ;
   }
 </style>
