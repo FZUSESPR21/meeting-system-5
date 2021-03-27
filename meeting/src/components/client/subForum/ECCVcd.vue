@@ -3,10 +3,10 @@
 <el-card class="box-card">
   <template #header>
     <div class="card-header">
-      <span>ICCV</span>
+      <span>ECCV</span>
     </div>
   </template>
-  <div v-for="o in 10" :key="o" class="text item">
+  <div v-for="o in 3" :key="o" class="text item">
     {{'[会议信息] ' + o }}
   </div>
 </el-card>

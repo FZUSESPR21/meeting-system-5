@@ -6,7 +6,7 @@
       <span>ICCV</span>
     </div>
   </template>
-  <div v-for="o in 10" :key="o" class="text item">
+  <div v-for="o in 3" :key="o" class="text item">
     {{'[会议信息] ' + o }}
   </div>
 </el-card>
