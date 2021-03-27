@@ -16,3 +16,7 @@ meeting/package-lock.json
 *.ntvs*
 *.njsproj
 *.sln
+.babelrc
+.editorconfig
+.postcssrc.js
+yarn.lock
