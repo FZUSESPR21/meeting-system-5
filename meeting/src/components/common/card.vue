@@ -10,8 +10,10 @@
 </template>
 
 <style scoped>
-  .wrap{
-      margin: 20px 0 0 200px;
+.card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
   }
   .text {
     font-size: 14px;
@@ -31,6 +33,6 @@
   }
 
   .box-card {
-    width: 1300px;
+    width: auto;
   }
 </style>
