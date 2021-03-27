@@ -1,6 +1,7 @@
 package com.team.meetingsystem.controller;
 
 import com.team.meetingsystem.dao.AccountForumMapper;
+import com.team.meetingsystem.dao.AgendaMapper;
 import com.team.meetingsystem.model.AccountForum;
 import com.team.meetingsystem.model.ResponseMessage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,6 @@ public class TestController {
     public String hello() {
         return "hello";
     }
-
     @GetMapping("/all")
     public ResponseMessage all(){
         accountForumMapper.insert(new AccountForum("用户2", 1));
