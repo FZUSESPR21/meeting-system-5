@@ -36,7 +36,7 @@ public class CountController {
         }
 
 
-        return ResponseMessage.success(countService.getMetingCount());
+        return ResponseMessage.failure("未登录");
 
     }
 
