@@ -1,0 +1,28 @@
+package com.team.meetingsystem.controller;
+
+import com.team.meetingsystem.model.ResponseMessage;
+import com.team.meetingsystem.service.AccountService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @date 2021/03/27
+ */
+@RestController
+@RequestMapping("/test")
+public class TestController {
+    @Autowired
+    private AccountService accountService;
+
+    @GetMapping("/hello")
+    public String hello() {
+        return "hello";
+    }
+
+    @GetMapping("/all")
+    public ResponseMessage all(){
+        return ResponseMessage.success(accountService.getAccounts());
+    }
+}
