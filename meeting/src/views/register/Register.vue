@@ -1,24 +1,23 @@
 <template>
   <div id="register-container">
     <div style="text-align: center;height: 50px;padding-left:40px">
-      登录
+      <h2>注册</h2>
     </div>
     <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-      <el-form-item label="账号" prop="user">
+      <el-form-item label="账号" class="label" prop="user" :header-cell-style="{'text-align':'center'}">
         <el-input type="text" v-model="ruleForm.user" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="密码" prop="pass">
+      <el-form-item label="密码" class="label" prop="pass" :header-cell-style="{'text-align':'center'}">
         <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="再次输入密码" prop="pass2">
+      <el-form-item label="再次输入密码" class="label" prop="pass2">
         <el-input type="password" v-model="ruleForm.pass2" autocomplete="off"></el-input>
       </el-form-item>
 <!--      <el-form-item label="年龄" prop="age">-->
 <!--        <el-input v-model.number="ruleForm.age"></el-input>-->
 <!--      </el-form-item>-->
       <el-form-item>
-        <el-button type="primary" @click="submitForm('ruleForm')" style="margin-left:40px">注册</el-button>
-        <el-button @click="loginForm()">去登录</el-button>
+        <el-button type="primary" @click="submitForm('ruleForm')" style="margin-left:30%">注册</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -84,23 +83,20 @@
     submitForm(formName) {
 
       this.$message.success("注册成功!!!");
-      this.$router.push({path: "/"});
-    },
-    loginForm() {
       this.$router.push({path: "/login"});
     }
   }
   }
 </script>
 
-<style scoped>
+<style>
   body{
     margin: 0;
   }
   #register-container{
     width: 400px;
     height: 320px;
-    background: #e5e9f2;
+    background: #e2e2e2;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -111,4 +107,8 @@
     padding-right: 40px;
     box-shadow:rgba(36, 36, 36, 0.61) 5px 5px 10px ;
   }
+.label .el-form-item__label {
+  text-align: center;
+  padding-right: 0;
+}
 </style>
