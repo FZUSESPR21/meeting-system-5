@@ -6,9 +6,12 @@ import router from './router'
 
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import axios from 'axios';
 //import VueParticles from 'vue-particles'
 
 Vue.use(ElementUI);
+Vue.use(axios);
+Vue.prototype.$axios = axios;
 //Vue.use(VueParticles)
 
 // new Vue({
