@@ -9,9 +9,15 @@ import timeline from '@/components/client/index/timeline'
 import timeline2 from '@/components/client/index/timeline2'
 import pageHeader from '@/components/common/pageHeader'
 import card from '@/components/common/card'
+import Home from '../views/login/Home.vue'
+import Login from '../views/login/Login.vue'
+import Register from '../views/register/Register'
 
 //views
 import index from '@/views/client/index'
+import subForumECCV from '@/views/client/subForumECCV'
+import subForumICCV from '@/views/client/subForumICCV'
+import subForumCVPR from '@/views/client/subForumCVPR'
 
 Vue.use(Router)
 
@@ -63,6 +69,24 @@ export default new Router({
             path: '*',
             redirect: '/'
         },
+
+        //分论坛页面
+        {
+            path: '/subForumECCV',
+            name: 'subForumECCV',
+            component: subForumECCV
+        },
+        {
+            path: '/subForumCVPR',
+            name: 'subForumCVPR',
+            component: subForumCVPR
+        },
+        {
+            path: '/subForumICCV',
+            name: 'subForumICCV',
+            component: subForumICCV
+        },
+
         {
             path: '/test',
             name: 'test',
@@ -77,6 +101,19 @@ export default new Router({
                 name: 'user_num_table',
                 component: UserNumTable
             }]
+        },
+        {
+            path: '/login',
+            name: 'Login',
+            // route level code-splitting
+            // this generates a separate chunk (about.[hash].js) for this route
+            // which is lazy-loaded when the route is visited.
+            component: Login
+        },
+        {
+            path: '/Register',
+            name: 'Register',
+            component: Register
         }
     ]
 })
