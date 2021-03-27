@@ -20,6 +20,8 @@ public class ResponseMessage {
         return new ResponseMessage(200, "OK", data);
     }
 
+    public static ResponseMessage failure(String message){ return new ResponseMessage(300, message,null); }
+
     public Integer getCode() {
         return code;
     }
