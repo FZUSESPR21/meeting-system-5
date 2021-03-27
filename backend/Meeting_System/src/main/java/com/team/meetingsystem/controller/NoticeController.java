@@ -1,5 +1,6 @@
 package com.team.meetingsystem.controller;
 
+import com.team.meetingsystem.model.Notice;
 import com.team.meetingsystem.model.ResponseMessage;
 import com.team.meetingsystem.service.NoticeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,10 @@ public class NoticeController {
     private NoticeService noticeService;
 
     @PostMapping("/setnotice")
-    public ResponseMessage get(HttpServletRequest request,@RequestParam Date publishtime, @RequestParam String content,@RequestParam Integer forumId) {
+    public ResponseMessage get(HttpServletRequest request, @RequestBody Notice notice) {
+        Date publishtime = notice.getPublishTime();
+        String content = notice.getContent();
+        Integer forumId = notice.getForumId();
         HttpSession session = request.getSession();
         Object object = session.getAttribute("userName");
         if (null == object) {
