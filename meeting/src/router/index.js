@@ -5,11 +5,12 @@ import Router from 'vue-router'
 import test from '@/components/test'
 import Admin from '@/views/admin/Admin'
 import UserNumTable from '@/components/admin/UserNumTable'
+import UserInfo from '@/components/admin/UserInfo'
+import SendMessage from '@/components/admin/SendMessage'
 import timeline from '@/components/client/index/timeline'
 import timeline2 from '@/components/client/index/timeline2'
 import pageHeader from '@/components/common/pageHeader'
 import card from '@/components/common/card'
-import Home from '../views/login/Home.vue'
 import Login from '../views/login/Login.vue'
 import Register from '../views/register/Register'
 
@@ -92,15 +93,31 @@ export default new Router({
             name: 'test',
             component: test
         },
+        //管理员界面
         {
             path: '/admin',
             name: 'admin',
             component: Admin,
             children: [{
-                path: '/user_num',
-                name: 'user_num_table',
-                component: UserNumTable
-            }]
+                    path: '/',
+                    component: UserNumTable
+                },
+                {
+                    path: '/user_num',
+                    name: 'user_num_table',
+                    component: UserNumTable
+                },
+                {
+                    path: '/user_info',
+                    name: 'user_info',
+                    component: UserInfo
+                },
+                {
+                    path: '/send_message',
+                    name: '/send_message',
+                    component: SendMessage
+                }
+            ]
         },
         {
             path: '/login',
