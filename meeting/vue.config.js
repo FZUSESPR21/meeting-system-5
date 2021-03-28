@@ -9,7 +9,7 @@ module.exports = {
         // 跨域
         proxy: {
             '/nuojinadm/': {
-                target: 'http://49.100.89.20',
+                target: 'http://47.100.89.20:8080',
                 changeOrigin: true
             }
         }
