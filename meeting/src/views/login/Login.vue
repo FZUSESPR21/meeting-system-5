@@ -5,13 +5,13 @@
      </h2>
     </div>
     <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-      <el-form-item label="账号" prop="user" class="item">
-        <el-input type="text" v-model="ruleForm.user" autocomplete="off"></el-input>
+      <el-form-item label="账号" prop="name" class="item">
+        <el-input type="text" v-model="ruleForm.name" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="密码" prop="pass" class="item">
-        <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
+      <el-form-item label="密码" prop="password" class="item">
+        <el-input type="password" v-model="ruleForm.password" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item id="anniu" style="padding-left:40px">
+      <el-form-item style="padding-left:40px">
         <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
         <el-button @click="toregister()">注册</el-button>
       </el-form-item>
@@ -20,17 +20,13 @@
 </template>
 <script>
 export default {
-  name: 'login',
   data () {
     var validatePass = (rule, value, callback) => {
       if (value === '') {
-        callback(new Error('请输入账户'))
+        return callback(new Error('请输入账户'))
       } else {
-        if (this.ruleForm.pass !== '') {
-          this.$refs.ruleForm.validateField('pass')
-        }
-        callback()
       }
+      callback()
     }
     var validatePass2 = (rule, value, callback) => {
       if (value === '') {
@@ -41,24 +37,37 @@ export default {
     }
     return {
       ruleForm: {
-        user: '',
-        pass: ''
+        name: '',
+        password: ''
       },
       rules: {
-        user: [
+        name: [
           { validator: validatePass, trigger: 'blur' }
         ],
-        pass: [
+        password: [
           { validator: validatePass2, trigger: 'blur' }
         ]
-      },
-      isLogin: false
+      }
     }
   },
   methods: {
     submitForm (formName) {
-      this.$message.success('登录成功!!!')
-      this.$router.push({ path: '/' })
+      const relu = this.ruleForm
+      this.$axios.post('http://47.100.89.20:8080/account/login', {
+        name: relu.name,
+        password: relu.password
+      }).then(resp => {
+        if (resp.data.code === 200) {
+          this.$message('登陆成功')
+          this.$router.push('/home')
+        } else {
+          this.$message.error('账号密码不正确')
+        }
+      }).catch(failResponse => {
+        console.log(failResponse)
+        this.$message.error('登陆失败')
+        return false
+      })
     },
     toregister () {
       this.$router.push('/register')
@@ -90,6 +99,6 @@ export default {
   }
   .item .el-form-item__label{
     text-align: center;
-    padding-right: 0px;
+    padding-right: 30px;
 }
 </style>
